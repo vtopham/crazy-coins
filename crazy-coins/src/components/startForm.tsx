@@ -39,23 +39,24 @@ export default function StartForm() {
     }
 
     return (
-        <div className = "start-date-input-wrapper">
-                <label>How many days ago would you like to start?
-                    <input 
-                        className = "start-input"
-                        type = "text"
-                        name = "offset"
-                        onChange = {handleOffset}
-                        value = {dateOffset}
-                        />
-                </label>
-                <label>How much money would you like to start with?
-                    <input 
-                        value = {money}
-                        onChange = {handleMoneyUpdate}
+        <div className = "start-form-wrapper">
+            <h3 >Let's get started...</h3>
+            <label className = "start-input-wrapper start-offset">How many days ago would you like to start?
+                <input 
+                    className = "start-input"
+                    type = "text"
+                    name = "offset"
+                    onChange = {handleOffset}
+                    value = {dateOffset}
                     />
-                </label>
-                <button onClick = {handleStart}>Start</button>
+            </label>
+            <label className = "start-input-wrapper start-money">How much money would you like to start with?
+                <input 
+                    value = {money}
+                    onChange = {handleMoneyUpdate}
+                />
+            </label> 
+            <button onClick = {handleStart}>Start</button>
         </div>
     )
 }

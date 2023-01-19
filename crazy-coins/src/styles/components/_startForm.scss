@@ -1,0 +1,21 @@
+.start-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 0;
+    
+    & > * {
+        margin: 5px 0;
+    }
+
+    button { 
+        width: 100px;
+    }
+
+    input { 
+        margin-left: 10px;
+    }
+
+}
