@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const startFormSlice = createSlice({
     name: 'startForm',
     initialState: {
-        startOffset: 0,
+        startOffset: 10,
         startCash: 500
     },
     reducers: {

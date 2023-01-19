@@ -14,8 +14,11 @@ export default function StartForm() {
 
     //TODO, would be nice to initialize from state
 
-    const [money, setMoney] = useState(500); 
-    const [dateOffset, setDateOffset] = useState(0);
+    const initMoney = useSelector((state: any) => state.startForm.startCash)
+    const initOffset = useSelector((state: any) => state.startForm.startOffset)
+    
+    const [money, setMoney] = useState(initMoney); 
+    const [dateOffset, setDateOffset] = useState(initOffset);
 
     const handleMoneyUpdate = (event: any) => {
         setMoney(event.target.value);
