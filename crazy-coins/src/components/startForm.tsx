@@ -10,15 +10,15 @@ export default function StartForm() {
     const dispatch = useDispatch()
 
     
-    //We're not initially getting our starting money/dates from state, but we'll update global state when the user clicks "start"
-
-    //TODO, would be nice to initialize from state
+    //Grab these values from state and then play around with them within the component
 
     const initMoney = useSelector((state: any) => state.startForm.startCash)
     const initOffset = useSelector((state: any) => state.startForm.startOffset)
     
     const [money, setMoney] = useState(initMoney); 
     const [dateOffset, setDateOffset] = useState(initOffset);
+
+    
 
     const handleMoneyUpdate = (event: any) => {
         setMoney(event.target.value);
@@ -29,14 +29,17 @@ export default function StartForm() {
     }
 
 
-    //When we hit "start", we want to update global state with our starting money and our start date, so that it can be accessed by other components
-
     const handleStart = () => {
-
+        //Upate values in global state TODO this is for when the component is destroyed eventually
         dispatch(changeStartOffset(dateOffset));
- 
         dispatch(changeStartCash(money));
+
+        //Update state for the game itself, accessing the gameView slice
+        
+
     }
+
+    
 
     return (
         <div className = "start-form-wrapper">
